@@ -21,5 +21,5 @@ try a lot of parameters! Yay! At the end, it totally paid off. Among other thing
 Shortly after the publication of this paper, there were different accessible implementations in Theano, Torch, Tensorflow and Chainer available to test with whatever dataset you can think of. 
 So, if you come across strange generated datasets you can totally blame these guys.
 <p align="center">
-    <img src="GAN/Image/DCGAN.PNG" width="240"\>
+    <img src="Image/DCGAN.PNG" width="240"\>
 </p>
