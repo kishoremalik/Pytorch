@@ -4,22 +4,23 @@
 
 [Article]
 
-The authors of the DCGAN focused on improving the architecture of the original vanilla GAN. 
-I presume they had to spend quite a long time doing the most exciting thing about deep learning: 
-try a lot of parameters! Yay! At the end, it totally paid off. Among other things, they found out that:
+DCGAN is one of the popular and successful network design for GAN. It mainly composes of convolution layers without max pooling or fully connected layers. It uses convolutional stride and transposed convolution for the downsampling and the upsampling. The figure below is the network design for the generator.
 
-## Table of Contents
+## Here is the summary of DCGAN:
  
   * [DCGAN Theory](#implementations)
-    + [Batch normalization is a must in both networks.]
-    + [Fully hidden connected layers are not a good idea.]
-    + [Avoid pooling, simply stride your convolutions!]
-    + [Avoid pooling, simply stride your convolutions!]
-    + [ReLU activations are your friend (almost always)]
+    + [Replace all max pooling with convolutional stride]
+    + [Use transposed convolution for upsampling]
+    + [Eliminate fully connected layers.]
+    + [Use Batch normalization except the output layer for the generator and the input layer of the discriminator.]
+    + [Use ReLU in the generator except for the output which uses tanh]
+    + [Use LeakyReLU in the discriminator.]
     
 ## DCGANs are also relevant because they have become one of the main baselines to implement and use GANs.
-Shortly after the publication of this paper, there were different accessible implementations in Theano, Torch, Tensorflow and Chainer available to test with whatever dataset you can think of. 
-So, if you come across strange generated datasets you can totally blame these guys.
+All models were trained with mini-batch stochastic gradient descent (SGD) with a mini-batch size of 128. All weights were initialized from a zero-centered Normal distribution with standard deviation 0.02. In the LeakyReLU, the slope of the leak was set to 0.2 in all models. While previous GAN work has used momentum to accelerate training, we used the Adam optimizer with tuned hyperparameters. We found the suggested learning rate of 0.001, to be too high, using 0.0002 instead. Additionally, we found leaving the momentum term β1 at the suggested value of 0.9 resulted in training oscillation and instability while reducing it to 0.5 helped stabilize training.
+
+##
+The simplicity of DCGAN contributes to its success. We reach certain bottleneck that increasing the complexity of the generator does not necessarily improve the image quality. Until we identify the bottleneck and know how to train GANs more effective, DCGAN remains a good start point for a new project.
 <p align="center">
-    <img src="Image/DCGAN.PNG" width="750"\>
+    <img src="Image/DCGAN1.PNG" width="750"\>
 </p>
