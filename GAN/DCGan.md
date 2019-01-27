@@ -20,3 +20,6 @@ try a lot of parameters! Yay! At the end, it totally paid off. Among other thing
 ## DCGANs are also relevant because they have become one of the main baselines to implement and use GANs.
 Shortly after the publication of this paper, there were different accessible implementations in Theano, Torch, Tensorflow and Chainer available to test with whatever dataset you can think of. 
 So, if you come across strange generated datasets you can totally blame these guys.
+<p align="center">
+    <img src="pytorch/GAN/image/DCGAN.png" width="240"\>
+</p>
